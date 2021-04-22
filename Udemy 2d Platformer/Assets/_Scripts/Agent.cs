@@ -7,17 +7,20 @@ public class Agent : MonoBehaviour
     public Rigidbody2D rb2d;
     public PlayerInput playerInput;
     public AgentAnimation animationManager;
+    public AgentRenderer agentRenderer;
 
     private void Awake()
     {
         playerInput = GetComponentInParent<PlayerInput>();
         rb2d = GetComponent<Rigidbody2D>();
         animationManager = GetComponentInChildren<AgentAnimation>();
+        agentRenderer = GetComponentInChildren<AgentRenderer>();
     }
 
     private void Start()
     {
         playerInput.OnMovement += HandleMovement;
+        playerInput.OnMovement += agentRenderer.FaceDirection;
     }
 
     private void HandleMovement(Vector2 input)
@@ -28,7 +31,7 @@ public class Agent : MonoBehaviour
             {
                 animationManager.PlayAnimation(AnimationType.run);
             }
-            rb2d.velocity = new Vector2(input.x, 0) * 5;
+            rb2d.velocity = new Vector2(input.x * 5, rb2d.velocity.y);
         }
         else
         {
@@ -36,7 +39,7 @@ public class Agent : MonoBehaviour
             {
                 animationManager.PlayAnimation(AnimationType.idle);
             }
-            rb2d.velocity = Vector2.zero;
+            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         }
 
 
