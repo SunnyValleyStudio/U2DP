@@ -7,4 +7,8 @@ Udemy 2d Platformer/Assets/*
 
 Udemy 2d Platformer/Assets/_Scripts/*
 !Udemy 2d Platformer/Assets/_Scripts/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/States/
+
+Udemy 2d Platformer/Assets/_Scripts/States/*
+!Udemy 2d Platformer/Assets/_Scripts/States/*.cs
 
