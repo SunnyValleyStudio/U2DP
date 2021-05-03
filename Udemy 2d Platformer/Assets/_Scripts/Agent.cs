@@ -18,7 +18,7 @@ public class Agent : MonoBehaviour
         agentRenderer = GetComponentInChildren<AgentRenderer>();
     }
 
-    internal void TransitionToState(State moveState, IdleState idleState)
+    internal void TransitionToState(State desiredState, State callingState)
     {
         throw new NotImplementedException();
     }
