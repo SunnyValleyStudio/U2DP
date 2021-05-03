@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,11 @@ public class Agent : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         animationManager = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
+    }
+
+    internal void TransitionToState(State moveState, IdleState idleState)
+    {
+        throw new NotImplementedException();
     }
 
     private void Start()

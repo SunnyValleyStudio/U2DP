@@ -27,6 +27,7 @@ public abstract class State : MonoBehaviour
 
     protected virtual void EnterState()
     {
+
     }
 
     protected virtual void HandleMovement(Vector2 obj)
