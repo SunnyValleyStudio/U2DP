@@ -32,7 +32,7 @@ public class MovementState : State
         SetPlayerVelocity();
         if(Mathf.Abs(agent.rb2d.velocity.x) < 0.01f)
         {
-            agent.TransitionToState(IdleState, this);
+            agent.TransitionToState(IdleState);
         }
     }
 

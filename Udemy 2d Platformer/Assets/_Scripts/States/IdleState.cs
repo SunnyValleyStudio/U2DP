@@ -16,7 +16,7 @@ public class IdleState : State
     {
         if (Mathf.Abs(input.x) > 0)
         {
-            agent.TransitionToState(MoveState, this);
+            agent.TransitionToState(MoveState);
         }
     }
 
