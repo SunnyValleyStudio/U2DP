@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine;
 public class JumpState : MovementState
 {
     public float jumpForce = 12;
+    public float lowJumpMultiplier = 2;
+
+    public State FallState;
 
     private bool jumpPressed = false;
 
@@ -25,5 +29,26 @@ public class JumpState : MovementState
     protected override void HandleJumpReleased()
     {
         jumpPressed = false;
+    }
+
+    public override void StateUpdate()
+    {
+        ControlJumpHeight();
+        CalculateVelocity();
+        SetPlayerVelocity();
+        if (agent.rb2d.velocity.y <= 0)
+        {
+            agent.TransitionToState(FallState);
+        }
+    }
+
+    private void ControlJumpHeight()
+    {
+        if(jumpPressed == false)
+        {
+            movementData.currentVelocity = agent.rb2d.velocity;
+            movementData.currentVelocity.y += lowJumpMultiplier*Physics2D.gravity.y * Time.deltaTime;
+            agent.rb2d.velocity = movementData.currentVelocity;
+        }
     }
 }
