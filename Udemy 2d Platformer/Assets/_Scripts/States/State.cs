@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 public abstract class State : MonoBehaviour
 {
+    [SerializeField]
+    protected State JumpState;
+
     protected Agent agent;
 
     public UnityEvent OnEnter, OnExit;
@@ -40,6 +43,15 @@ public abstract class State : MonoBehaviour
 
     protected virtual void HandleJumpPressed()
     {
+        TestJumpTransition();
+    }
+
+    private void TestJumpTransition()
+    {
+        if (agent.groundDetector.isGrounded)
+        {
+            agent.TransitionToState(JumpState);
+        }
     }
 
     protected virtual void HandleAttack()
