@@ -17,7 +17,6 @@ public class AgentAnimation : MonoBehaviour
         switch (animationType)
         {
             case AnimationType.die:
-
                 break;
             case AnimationType.hit:
                 break;
@@ -30,8 +29,10 @@ public class AgentAnimation : MonoBehaviour
                 Play("Run");
                 break;
             case AnimationType.jump:
+                Play("Jump");
                 break;
             case AnimationType.fall:
+                Play("Fall");
                 break;
             case AnimationType.climb:
                 break;
