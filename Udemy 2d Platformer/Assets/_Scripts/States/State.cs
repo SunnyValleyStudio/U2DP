@@ -63,13 +63,14 @@ public abstract class State : MonoBehaviour
         TestFallTransition();
     }
 
-    private void TestFallTransition()
+    protected bool TestFallTransition()
     {
         if(agent.groundDetector.isGrounded == false)
         {
             agent.TransitionToState(FallState);
-            return;
+            return true;
         }
+        return false;
     }
 
     public virtual void StateFixedUpdate()

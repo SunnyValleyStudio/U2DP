@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class JumpState : MovementState
 {
+    public float jumpForce = 12;
+    public float lowJumpMultiplier = 2;
+
     private bool jumpPressed = false;
 
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.jump);
         movementData.currentVelocity = agent.rb2d.velocity;
-        movementData.currentVelocity.y = agent.agentData.jumpForce;
+        movementData.currentVelocity.y = jumpForce;
         agent.rb2d.velocity = movementData.currentVelocity;
         jumpPressed = true;
     }
@@ -42,7 +45,7 @@ public class JumpState : MovementState
         if(jumpPressed == false)
         {
             movementData.currentVelocity = agent.rb2d.velocity;
-            movementData.currentVelocity.y += agent.agentData.lowJumpMultiplier *Physics2D.gravity.y * Time.deltaTime;
+            movementData.currentVelocity.y += lowJumpMultiplier*Physics2D.gravity.y * Time.deltaTime;
             agent.rb2d.velocity = movementData.currentVelocity;
         }
     }

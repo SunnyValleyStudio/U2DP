@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
-    public AgentDataSO agentData;
-
     public Rigidbody2D rb2d;
     public PlayerInput agentInput;
     public AgentAnimation animationManager;
