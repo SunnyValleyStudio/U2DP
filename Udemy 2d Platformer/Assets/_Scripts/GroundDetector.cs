@@ -30,8 +30,11 @@ public class GroundDetector : MonoBehaviour
 
         if(raycastHit.collider != null)
         {
-
-            isGrounded = true;
+            if(raycastHit.collider.IsTouching(agentCollider) == true)
+            {
+                isGrounded = true;
+            }
+            
         }
         else
         {
