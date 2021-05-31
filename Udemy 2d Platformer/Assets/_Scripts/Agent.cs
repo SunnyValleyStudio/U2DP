@@ -12,7 +12,6 @@ public class Agent : MonoBehaviour
     public AgentAnimation animationManager;
     public AgentRenderer agentRenderer;
     public GroundDetector groundDetector;
-    public ClimbingDetector climbingDetector;
 
     public State curretSate = null, previousState = null;
     public State IdleState;
@@ -27,7 +26,6 @@ public class Agent : MonoBehaviour
         animationManager = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
         groundDetector = GetComponentInChildren<GroundDetector>();
-        climbingDetector = GetComponentInChildren<ClimbingDetector>();
 
         State[] states = GetComponentsInChildren<State>();
         foreach (var state in states)
