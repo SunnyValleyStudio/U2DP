@@ -31,7 +31,7 @@ public class ClimbingState : State
         }
         else
         {
-            agent.animationManager.StartAnimation();
+            agent.animationManager.StopAnimation();
             agent.rb2d.velocity = Vector2.zero;
         }
 
