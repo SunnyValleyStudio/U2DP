@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,16 @@ public class AgentAnimation : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    internal void StopAnimation()
+    {
+        animator.enabled = false;
+    }
+
+    internal void StartAnimation()
+    {
+        animator.enabled = true;
     }
 
     public void Play(string name)
