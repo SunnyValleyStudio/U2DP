@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Agent : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class Agent : MonoBehaviour
     [Header("State debugging:")]
     public string stateName = "";
 
+    [field: SerializeField]
+    private UnityEvent OnRespawnRequired { get; set; }
+
     private void Awake()
     {
         agentInput = GetComponentInParent<PlayerInput>();
@@ -36,9 +40,9 @@ public class Agent : MonoBehaviour
         }
     }
 
-    internal void AgentDied()
+    public void AgentDied()
     {
-        throw new NotImplementedException();
+        OnRespawnRequired?.Invoke();
     }
 
     private void Start()
