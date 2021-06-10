@@ -36,6 +36,11 @@ public class Agent : MonoBehaviour
         }
     }
 
+    internal void AgentDied()
+    {
+        throw new NotImplementedException();
+    }
+
     private void Start()
     {
         agentInput.OnMovement += agentRenderer.FaceDirection;
