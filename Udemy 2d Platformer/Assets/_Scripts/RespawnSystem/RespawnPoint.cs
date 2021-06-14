@@ -26,7 +26,7 @@ namespace RespawnSystem
             {
                 this.respawnTarget = collision.gameObject;
                 OnSpawnPointActivated?.Invoke();
-                GetComponent<Collider2D>().enabled = false;
+                
             }
         }
 
@@ -43,7 +43,7 @@ namespace RespawnSystem
 
         public void DisableRespawnPoint()
         {
-            gameObject.SetActive(false);
+            GetComponent<Collider2D>().enabled = false;
         }
 
         public void ResetRespawnPoint()

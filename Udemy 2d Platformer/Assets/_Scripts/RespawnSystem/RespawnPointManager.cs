@@ -42,6 +42,7 @@ namespace RespawnSystem
             foreach (var item in respawnPoints)
             {
                 item.ResetRespawnPoint();
+
             }
             currentRespawnPoint = respawnPoints[0];
         }
