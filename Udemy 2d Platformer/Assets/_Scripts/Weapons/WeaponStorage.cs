@@ -1,41 +1,48 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class WeaponStorage : MonoBehaviour
+namespace WeaponSystem
 {
-    public int WeaponCount { get; internal set; }
-
-    // Start is called before the first frame update
-    void Start()
+    public class WeaponStorage
     {
-        
-    }
+        private List<WeaponData> weaponDataList = new List<WeaponData>();
+        private int currentWeaponIndex = -1;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public int WeaponCount { get => weaponDataList.Count; }
 
-    internal WeaponData GetCurrentWeapon()
-    {
-        throw new NotImplementedException();
-    }
+        internal WeaponData GetCurrentWeapon()
+        {
+            if (currentWeaponIndex == -1)
+                return null;
+            return weaponDataList[currentWeaponIndex];
+        }
 
-    internal WeaponData SwapWeapon()
-    {
-        throw new NotImplementedException();
-    }
+        internal WeaponData SwapWeapon()
+        {
+            if (currentWeaponIndex == -1)
+                return null;
+            currentWeaponIndex++;
+            if (currentWeaponIndex >= weaponDataList.Count)
+                currentWeaponIndex = 0;
+            return weaponDataList[currentWeaponIndex];
+        }
 
-    internal void AddWeaponData(WeaponData weaponData)
-    {
-        throw new NotImplementedException();
-    }
+        internal bool AddWeaponData(WeaponData weaponData)
+        {
+            if (weaponDataList.Contains(weaponData))
+                return false;
+            weaponDataList.Add(weaponData);
+            currentWeaponIndex = weaponDataList.Count - 1;
+            return true;
+        }
 
-    internal List<string> GetPlayerWeaponNames()
-    {
-        throw new NotImplementedException();
+        internal List<string> GetPlayerWeaponNames()
+        {
+            return weaponDataList.Select(weapon => weapon.name).ToList();
+        }
     }
 }
+

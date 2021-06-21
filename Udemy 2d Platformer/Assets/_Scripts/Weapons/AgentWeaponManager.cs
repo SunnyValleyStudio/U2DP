@@ -53,7 +53,8 @@ namespace WeaponSystem
 
         public void AddWeaponData(WeaponData weaponData)
         {
-            weaponStorage.AddWeaponData(weaponData);
+            if (weaponStorage.AddWeaponData(weaponData) == false)
+                return;
             if (weaponStorage.WeaponCount == 2)
                 OnMultipleWeapons?.Invoke();
             SwapWeaponSprite(weaponData.weaponSprite);
