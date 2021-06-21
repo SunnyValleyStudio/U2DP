@@ -19,4 +19,9 @@ Udemy 2d Platformer/Assets/_Scripts/UI/*
 
 Udemy 2d Platformer/Assets/_Scripts/RespawnSystem/*
 !Udemy 2d Platformer/Assets/_Scripts/RespawnSystem/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/Weapons
+
+Udemy 2d Platformer/Assets/_Scripts/Weapons/*
+!Udemy 2d Platformer/Assets/_Scripts/Weapons/*.cs
+
 
