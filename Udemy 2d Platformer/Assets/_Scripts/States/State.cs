@@ -56,6 +56,10 @@ public abstract class State : MonoBehaviour
 
     protected virtual void HandleAttack()
     {
+        if (agent.agentWeapon.CanIUseWeapon(agent.groundDetector.isGrounded))
+        {
+            agent.agentWeapon.GetCurrentWeapon().PerformAttack(agent, 0, Vector3.right);
+        }
     }
 
     public virtual void StateUpdate()
