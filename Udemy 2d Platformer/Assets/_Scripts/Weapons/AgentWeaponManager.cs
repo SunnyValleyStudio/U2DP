@@ -24,7 +24,7 @@ namespace WeaponSystem
 
         }
 
-        private void ToggleWeaponVisibility(bool val)
+        public void ToggleWeaponVisibility(bool val)
         {
             if (val)
             {
