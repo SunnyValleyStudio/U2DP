@@ -41,6 +41,11 @@ public class ClimbingState : State
         }
     }
 
+    protected override void HandleAttack()
+    {
+        //prevent attack
+    }
+
     protected override void ExitState()
     {
         agent.rb2d.gravityScale = previousGravityScale;
