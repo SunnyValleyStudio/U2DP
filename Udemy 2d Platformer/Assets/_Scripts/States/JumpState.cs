@@ -6,8 +6,6 @@ using UnityEngine;
 public class JumpState : MovementState
 {
     private bool jumpPressed = false;
-    [SerializeField]
-    protected State ClimbState;
 
     protected override void EnterState()
     {
@@ -35,11 +33,11 @@ public class JumpState : MovementState
         SetPlayerVelocity();
         if (agent.rb2d.velocity.y <= 0)
         {
-            agent.TransitionToState(FallState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Fall));
         }
         else if (agent.climbingDetector.CanClimb && Mathf.Abs(agent.agentInput.MovementVector.y) > 0)
         {
-            agent.TransitionToState(ClimbState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Climbing));
         }
     }
 

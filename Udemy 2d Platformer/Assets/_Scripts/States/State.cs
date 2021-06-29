@@ -6,9 +6,6 @@ using UnityEngine.Events;
 
 public abstract class State : MonoBehaviour
 {
-    [SerializeField]
-    protected State JumpState, FallState, AttackState;
-
     protected Agent agent;
 
     public UnityEvent OnEnter, OnExit;
@@ -50,7 +47,7 @@ public abstract class State : MonoBehaviour
     {
         if (agent.groundDetector.isGrounded)
         {
-            agent.TransitionToState(JumpState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Jump));
         }
     }
 
@@ -68,7 +65,7 @@ public abstract class State : MonoBehaviour
     {
         if(agent.groundDetector.isGrounded == false)
         {
-            agent.TransitionToState(FallState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Fall));
             return true;
         }
         return false;
@@ -97,7 +94,7 @@ public abstract class State : MonoBehaviour
     {
         if (agent.agentWeapon.CanIUseWeapon(agent.groundDetector.isGrounded))
         {
-            agent.TransitionToState(AttackState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Attack));
         }
     }
 }

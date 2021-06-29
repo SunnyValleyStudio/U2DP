@@ -8,7 +8,6 @@ public class MovementState : State
 {
     [SerializeField]
     protected MovementData movementData;
-    public State IdleState;
 
     public UnityEvent OnStep;
 
@@ -35,7 +34,7 @@ public class MovementState : State
         SetPlayerVelocity();
         if(Mathf.Abs(agent.rb2d.velocity.x) < 0.01f)
         {
-            agent.TransitionToState(IdleState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Idle));
         }
     }
 

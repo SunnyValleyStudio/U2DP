@@ -22,6 +22,8 @@ public class Agent : MonoBehaviour
     [HideInInspector]
     public AgentWeaponManager agentWeapon;
 
+    public StateFactory stateFactory;
+
     [Header("State debugging:")]
     public string stateName = "";
 
@@ -37,12 +39,9 @@ public class Agent : MonoBehaviour
         groundDetector = GetComponentInChildren<GroundDetector>();
         climbingDetector = GetComponentInChildren<ClimbingDetector>();
         agentWeapon = GetComponentInChildren<AgentWeaponManager>();
+        stateFactory = GetComponentInChildren<StateFactory>();
 
-        State[] states = GetComponentsInChildren<State>();
-        foreach (var state in states)
-        {
-            state.InitializeState(this);
-        }
+        stateFactory.InitializeStates(this);
     }
 
     public void AgentDied()

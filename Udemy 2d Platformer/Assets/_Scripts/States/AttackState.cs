@@ -6,8 +6,6 @@ using UnityEngine.Events;
 
 public class AttackState : State
 {
-    [SerializeField]
-    protected State IdleState;
     public LayerMask hittableLayerMask;
 
     protected Vector2 direction;
@@ -40,9 +38,9 @@ public class AttackState : State
     {
         agent.animationManager.OnAnimationEnd.RemoveListener(TransitionToIdleState);
         if (agent.groundDetector.isGrounded)
-            agent.TransitionToState(IdleState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Idle));
         else
-            agent.TransitionToState(FallState);
+            agent.TransitionToState(agent.stateFactory.GetState(StateType.Fall));
     }
 
     protected override void ExitState()
