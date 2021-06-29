@@ -49,6 +49,11 @@ public class Agent : MonoBehaviour
         OnRespawnRequired?.Invoke();
     }
 
+    public void GetHit()
+    {
+        curretSate.GetHit();
+    }
+
     private void Start()
     {
         agentInput.OnMovement += agentRenderer.FaceDirection;

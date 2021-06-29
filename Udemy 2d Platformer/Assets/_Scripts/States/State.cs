@@ -71,6 +71,11 @@ public abstract class State : MonoBehaviour
         return false;
     }
 
+    public virtual void GetHit()
+    {
+
+    }
+
     public virtual void StateFixedUpdate()
     {
 
