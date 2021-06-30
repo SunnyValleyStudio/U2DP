@@ -23,6 +23,7 @@ public class Agent : MonoBehaviour
     public AgentWeaponManager agentWeapon;
 
     public StateFactory stateFactory;
+    private Damagable damagable;
 
     [Header("State debugging:")]
     public string stateName = "";
@@ -40,8 +41,21 @@ public class Agent : MonoBehaviour
         climbingDetector = GetComponentInChildren<ClimbingDetector>();
         agentWeapon = GetComponentInChildren<AgentWeaponManager>();
         stateFactory = GetComponentInChildren<StateFactory>();
+        damagable = GetComponent<Damagable>();
 
         stateFactory.InitializeStates(this);
+    }
+
+    private void Start()
+    {
+        agentInput.OnMovement += agentRenderer.FaceDirection;
+        InitializeAgent();
+    }
+
+    private void InitializeAgent()
+    {
+        TransitionToState(IdleState);
+        damagable.Initialize(agentData.health);
     }
 
     public void AgentDied()
@@ -54,11 +68,7 @@ public class Agent : MonoBehaviour
         curretSate.GetHit();
     }
 
-    private void Start()
-    {
-        agentInput.OnMovement += agentRenderer.FaceDirection;
-        TransitionToState(IdleState);
-    }
+    
 
     internal void TransitionToState(State desiredState)
     {

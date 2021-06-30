@@ -20,6 +20,7 @@ public class StateFactory : MonoBehaviour
             _ => throw new System.Exception("State not defined " + stateType.ToString())
         };
 
+
     public void InitializeStates(Agent agent)
     {
         State[] states = GetComponents<State>();
