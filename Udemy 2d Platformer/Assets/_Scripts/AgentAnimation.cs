@@ -10,7 +10,6 @@ public class AgentAnimation : MonoBehaviour
 
     public UnityEvent OnAnimationAction;
     public UnityEvent OnAnimationEnd;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
