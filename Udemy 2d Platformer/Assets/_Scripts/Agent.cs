@@ -62,7 +62,15 @@ public class Agent : MonoBehaviour
 
     public void AgentDied()
     {
-        OnRespawnRequired?.Invoke();
+        if(damagable.CurrentHealth > 0)
+        {
+            OnRespawnRequired?.Invoke();
+        }
+        else
+        {
+            curretSate.Die();
+        }
+        
     }
 
     public void GetHit()
