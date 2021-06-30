@@ -81,6 +81,11 @@ public abstract class State : MonoBehaviour
 
     }
 
+    public virtual void Die()
+    {
+
+    }
+
     public void Exit()
     {
         this.agent.agentInput.OnAttack -= HandleAttack;

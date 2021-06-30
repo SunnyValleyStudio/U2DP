@@ -30,6 +30,8 @@ public class Agent : MonoBehaviour
 
     [field: SerializeField]
     private UnityEvent OnRespawnRequired { get; set; }
+    [field: SerializeField]
+    public UnityEvent OnAgentDie { get; set; }
 
     private void Awake()
     {
