@@ -25,6 +25,8 @@ namespace SVS.AI
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("ClimbingStuff"))
+                return;
             OnPathBlocked?.Invoke();
         }
 

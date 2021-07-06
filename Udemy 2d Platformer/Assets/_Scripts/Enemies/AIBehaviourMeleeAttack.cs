@@ -17,7 +17,7 @@ namespace SVS.AI
         private void Awake()
         {
             if (meleeRangeDetector == null)
-                meleeRangeDetector = GetComponentInChildren<AIMeleeAttackDetector>();
+                meleeRangeDetector = transform.parent.GetComponentInParent<AIMeleeAttackDetector>();
         }
 
         public override void PerformAction(AIEnemy enemyAI)
