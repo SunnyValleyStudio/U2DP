@@ -1,25 +1,12 @@
-using SVS.AI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIBehaviour : MonoBehaviour
+namespace SVS.AI
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class AIBehaviour : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    internal void PerformAction(AIPatrollingEnemyBrain aIPatrollingEnemyBrain)
-    {
-        throw new NotImplementedException();
+        public abstract void PerformAction(AIEnemy enemyAI);
     }
 }

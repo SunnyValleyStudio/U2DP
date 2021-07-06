@@ -7,7 +7,7 @@ namespace SVS.AI
 {
     public abstract class AIEnemy : MonoBehaviour, IAgentInput
     {
-        public Vector2 MovementVector { get; protected set; }
+        public Vector2 MovementVector { get; set; }
 
         public event Action OnAttack;
         public event Action OnJumpPressed;
