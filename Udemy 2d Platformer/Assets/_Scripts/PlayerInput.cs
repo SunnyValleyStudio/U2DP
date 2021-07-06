@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour, IAgentInput
 {
     [field: SerializeField]
     public Vector2 MovementVector { get; private set; }
@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if(Time.timeScale > 0)
+        if (Time.timeScale > 0)
         {
             GetMovementInput();
             GetJumpInput();

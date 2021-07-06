@@ -10,7 +10,7 @@ public class Agent : MonoBehaviour
     public AgentDataSO agentData;
 
     public Rigidbody2D rb2d;
-    public PlayerInput agentInput;
+    public IAgentInput agentInput;
     public AgentAnimation animationManager;
     public AgentRenderer agentRenderer;
     public GroundDetector groundDetector;
@@ -35,7 +35,7 @@ public class Agent : MonoBehaviour
 
     private void Awake()
     {
-        agentInput = GetComponentInParent<PlayerInput>();
+        agentInput = GetComponentInParent<IAgentInput>();
         rb2d = GetComponent<Rigidbody2D>();
         animationManager = GetComponentInChildren<AgentAnimation>();
         agentRenderer = GetComponentInChildren<AgentRenderer>();
