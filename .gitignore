@@ -31,4 +31,8 @@ Udemy 2d Platformer/Assets/_Scripts/Obstacles/*
 
 Udemy 2d Platformer/Assets/_Scripts/Enemies/*
 !Udemy 2d Platformer/Assets/_Scripts/Enemies/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/Common
+
+Udemy 2d Platformer/Assets/_Scripts/Common/*
+!Udemy 2d Platformer/Assets/_Scripts/Common/*.cs
 
