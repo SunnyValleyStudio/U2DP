@@ -28,6 +28,8 @@ namespace SVS.Feedback
 
         public void GetHit(GameObject gameObject, int weaponDamage)
         {
+            if (this.enabled == false)
+                return;
             ToggleColliders(false);
             StartCoroutine(ResetColliders());
             StartCoroutine(Flash(flashAlpha));
