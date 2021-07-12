@@ -39,4 +39,7 @@ Udemy 2d Platformer/Assets/_Scripts/Common/*
 
 Udemy 2d Platformer/Assets/_Scripts/Feedback/*
 !Udemy 2d Platformer/Assets/_Scripts/Feedback/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/UI/Animations
 
+Udemy 2d Platformer/Assets/_Scripts/UI/Animations/*
+!Udemy 2d Platformer/Assets/_Scripts/UI/Animations/*.cs
