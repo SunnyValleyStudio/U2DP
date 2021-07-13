@@ -8,6 +8,7 @@ namespace SVS.Pickable
     {
         protected SpriteRenderer spriteRenderer;
 
+        [SerializeField]
         private BoxCollider2D pickableCollider;
 
         [SerializeField]
