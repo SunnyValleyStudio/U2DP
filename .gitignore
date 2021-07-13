@@ -47,3 +47,7 @@ Udemy 2d Platformer/Assets/_Scripts/UI/Animations/*
 
 Udemy 2d Platformer/Assets/_Scripts/PickableItems/*
 !Udemy 2d Platformer/Assets/_Scripts/PickableItems/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/Animations
+
+Udemy 2d Platformer/Assets/_Scripts/Animations/*
+!Udemy 2d Platformer/Assets/_Scripts/Animations/*.cs
