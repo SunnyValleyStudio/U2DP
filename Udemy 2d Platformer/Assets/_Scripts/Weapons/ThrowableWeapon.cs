@@ -25,7 +25,6 @@ namespace WeaponSystem
         private float radius = 1;
         [SerializeField]
         private Color gizmoColor = Color.red;
-        [SerializeField]
         private LayerMask layerMask;
 
         private void Awake()
