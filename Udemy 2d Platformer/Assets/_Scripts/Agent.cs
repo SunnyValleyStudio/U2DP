@@ -52,6 +52,15 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement += agentRenderer.FaceDirection;
         InitializeAgent();
+
+        agentInput.OnWeaponChange += SwapWeapon;
+    }
+
+    private void SwapWeapon()
+    {
+        if (agentWeapon == null)
+            return;
+        agentWeapon.SwapWeapon();
     }
 
     private void InitializeAgent()
