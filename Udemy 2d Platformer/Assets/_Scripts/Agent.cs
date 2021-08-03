@@ -114,4 +114,11 @@ public class Agent : MonoBehaviour
         groundDetector.CheckIsGrounded();
         curretSate.StateFixedUpdate();
     }
+
+    public void PickUp(WeaponData weaponData)
+    {
+        if (agentWeapon == null)
+            return;
+        agentWeapon.PickUpWeapon(weaponData);
+    }
 }
