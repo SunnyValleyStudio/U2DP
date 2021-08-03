@@ -13,6 +13,14 @@ namespace WeaponSystem
 
         public int WeaponCount { get => weaponDataList.Count; }
 
+        public WeaponData WeaponData
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         internal WeaponData GetCurrentWeapon()
         {
             if (currentWeaponIndex == -1)
