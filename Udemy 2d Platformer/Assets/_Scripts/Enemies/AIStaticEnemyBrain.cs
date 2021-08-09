@@ -5,14 +5,13 @@ using UnityEngine;
 
 namespace SVS.AI
 {
-    public class AIStaticEnemyBrain : MonoBehaviour, IAgentInput
+    public class AIStaticEnemyBrain : AIEnemy
     {
-        public Vector2 MovementVector { get; private set; }
+        public AIBehaviour AttackBehaviour;
 
-        public event Action OnAttack;
-        public event Action OnJumpPressed;
-        public event Action OnJumpReleased;
-        public event Action<Vector2> OnMovement;
-        public event Action OnWeaponChange;
+        private void Update()
+        {
+            AttackBehaviour.PerformAction(this);
+        }
     }
 }
