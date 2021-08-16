@@ -55,3 +55,7 @@ Udemy 2d Platformer/Assets/_Scripts/Animations/*
 
 Udemy 2d Platformer/Assets/_Scripts/Player/*
 !Udemy 2d Platformer/Assets/_Scripts/Player/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/LevelManagement
+
+Udemy 2d Platformer/Assets/_Scripts/LevelManagement/*
+!Udemy 2d Platformer/Assets/_Scripts/LevelManagement/*.cs
