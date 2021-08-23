@@ -26,6 +26,7 @@ namespace RespawnSystem
 
         public void Respawn(GameObject objectToRespawn)
         {
+            currentRespawnPoint.SetPlayerGO(objectToRespawn);
             currentRespawnPoint.RespawnPlayer();
             objectToRespawn.SetActive(true);
         }
