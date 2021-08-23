@@ -59,3 +59,8 @@ Udemy 2d Platformer/Assets/_Scripts/Player/*
 
 Udemy 2d Platformer/Assets/_Scripts/LevelManagement/*
 !Udemy 2d Platformer/Assets/_Scripts/LevelManagement/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/SaveSystem
+
+Udemy 2d Platformer/Assets/_Scripts/SaveSystem/*
+!Udemy 2d Platformer/Assets/_Scripts/SaveSystem/*.cs
+
