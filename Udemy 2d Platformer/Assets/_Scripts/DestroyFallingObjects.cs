@@ -17,8 +17,10 @@ public class DestroyFallingObjects : MonoBehaviour
         Collider2D collider = Physics2D.OverlapBox(transform.position, size, 0, objectsToDestoryLayerMask);
         if(collider != null)
         {
-            Agent agent = collider.GetComponent<Agent>();
-            if(agent == null)
+            Agent agent = collider.transform.parent.GetComponent<Agent>();
+            if (agent == null)
+                agent = collider.transform.parent.GetComponentInChildren<Agent>();
+            if (agent == null)
             {
                 Destroy(collider.gameObject);
                 return;

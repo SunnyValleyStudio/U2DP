@@ -33,5 +33,10 @@ namespace SVS.Levels
             spawnPointManager.Respawn(player.gameObject);
             cameraManager.SetCameraTarget(player.transform);
         }
+
+        public void SaveGameData()
+        {
+            SaveSystem.SaveGameData(sceneManagement.GetNextLevelIndex());
+        }
     }
 }
