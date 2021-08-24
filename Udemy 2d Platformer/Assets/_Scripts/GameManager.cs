@@ -1,8 +1,10 @@
 using RespawnSystem;
 using SVS.Camera;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace SVS.Levels
 {
@@ -29,13 +31,28 @@ namespace SVS.Levels
 
         private void Start()
         {
+            LoadData();
             player.gameObject.SetActive(false);
             spawnPointManager.Respawn(player.gameObject);
             cameraManager.SetCameraTarget(player.transform);
         }
 
+        private void LoadData()
+        {
+            IEnumerable<ISaveData> saveDataScripts = FindObjectsOfType<MonoBehaviour>().OfType<ISaveData>();
+            foreach (ISaveData item in saveDataScripts)
+            {
+                item.LoadData();
+            }
+        }
+
         public void SaveGameData()
         {
+            IEnumerable<ISaveData> saveDataScripts = FindObjectsOfType<MonoBehaviour>().OfType<ISaveData>();
+            foreach (ISaveData item in saveDataScripts)
+            {
+                item.SaveData();
+            }
             SaveSystem.SaveGameData(sceneManagement.GetNextLevelIndex());
         }
     }
