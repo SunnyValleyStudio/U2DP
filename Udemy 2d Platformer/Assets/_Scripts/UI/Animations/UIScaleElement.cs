@@ -23,6 +23,10 @@ namespace SVS.UI
         private void Start()
         {
             baseScale = element.localScale;
+            if(baseScale.magnitude <= 0)
+            {
+                baseScale = Vector3.one;
+            }
             endScale = Vector3.one * animationEndScale;
 
             if (playConstantly)
