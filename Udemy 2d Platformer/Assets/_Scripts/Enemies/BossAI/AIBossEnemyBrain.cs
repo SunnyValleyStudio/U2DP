@@ -6,11 +6,16 @@ namespace SVS.AI
 {
     public class AIBossEnemyBrain : AIEnemy
     {
+        [SerializeField]
         private AIDataBoard aiBoard;
+        [SerializeField]
         private AiPlayerEnterAreaDetector playerDetector;
+        [SerializeField]
         private AIMeleeAttackDetector meleeRangeDetector;
+        [SerializeField]
         private AIEndPlatformDetector endPlatformDetector;
 
+        [SerializeField]
         private AIBehaviour IdleBehaviour, ChargeBehaviour, MeleeAttackBehaviour, WaitBehaviour;
 
         private void Update()
