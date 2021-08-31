@@ -63,4 +63,7 @@ Udemy 2d Platformer/Assets/_Scripts/LevelManagement/*
 
 Udemy 2d Platformer/Assets/_Scripts/SaveSystem/*
 !Udemy 2d Platformer/Assets/_Scripts/SaveSystem/*.cs
+!Udemy 2d Platformer/Assets/_Scripts/Enemies/BossAI
 
+Udemy 2d Platformer/Assets/_Scripts/Enemies/BossAI/*
+!Udemy 2d Platformer/Assets/_Scripts/Enemies/BossAI/*.cs
