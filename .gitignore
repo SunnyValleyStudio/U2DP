@@ -5,6 +5,10 @@ Udemy 2d Platformer/*
 Udemy 2d Platformer/Assets/*
 !Udemy 2d Platformer/Assets/_Scripts/
 
+!Udemy 2d Platformer/Assets/_Input/
+Udemy 2d Platformer/Assets/_Input/*
+!Udemy 2d Platformer/Assets/_Input/*.cs
+
 Udemy 2d Platformer/Assets/_Scripts/*
 !Udemy 2d Platformer/Assets/_Scripts/*.cs
 !Udemy 2d Platformer/Assets/_Scripts/States/
@@ -67,3 +71,5 @@ Udemy 2d Platformer/Assets/_Scripts/SaveSystem/*
 
 Udemy 2d Platformer/Assets/_Scripts/Enemies/BossAI/*
 !Udemy 2d Platformer/Assets/_Scripts/Enemies/BossAI/*.cs
+
+

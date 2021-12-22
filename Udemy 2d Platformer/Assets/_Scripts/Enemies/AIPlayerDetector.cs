@@ -10,6 +10,7 @@ namespace SVS.AI
         public bool PlayerDetected { get; private set; }
         public Vector2 DirectionToTarget => target.transform.position - detectorOrigin.position;
 
+        [Header("OverlapBox parameters")]
         [SerializeField]
         private Transform detectorOrigin;
         public Vector2 detectorSize = Vector2.one;
@@ -45,7 +46,17 @@ namespace SVS.AI
         IEnumerator DetectionCoroutine()
         {
             yield return new WaitForSeconds(detectionDelay);
-            Collider2D collider = Physics2D.OverlapBox((Vector2)detectorOrigin.position + detectorOriginOffset, detectorSize, 0, detectorLayerMask);
+            PerformDetection();
+            StartCoroutine(DetectionCoroutine());
+
+        }
+
+        public void PerformDetection()
+        {
+            Collider2D collider = 
+                Physics2D.OverlapBox(
+                    (Vector2)detectorOrigin.position + detectorOriginOffset, 
+                    detectorSize, 0, detectorLayerMask);
             if (collider != null)
             {
                 Target = collider.gameObject;
@@ -54,8 +65,6 @@ namespace SVS.AI
             {
                 Target = null;
             }
-            StartCoroutine(DetectionCoroutine());
-
         }
 
         private void OnDrawGizmos()

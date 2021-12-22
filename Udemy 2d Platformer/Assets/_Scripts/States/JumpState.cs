@@ -41,6 +41,12 @@ public class JumpState : MovementState
         }
     }
 
+    protected override void HandleAttack()
+    {
+        agent.rb2d.velocity = new Vector2(agent.rb2d.velocity.x, 0);
+        base.HandleAttack();
+    }
+
     private void ControlJumpHeight()
     {
         if(jumpPressed == false)
